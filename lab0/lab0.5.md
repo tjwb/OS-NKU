@@ -135,7 +135,29 @@ PMP1: 0x0000000000000000-0xffffffffffffffff (A,R,W,X)
 ```
 2.可以看到程序在最后使用了while(1)，所以会一直循环执行。
 3.继续使用continue执行，得到下面的结果：
-![alt text](image.png)
+```
+OpenSBI v0.4 (Jul  2 2019 11:53:53)
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name          : QEMU Virt Machine
+Platform HART Features : RV64ACDFIMSU
+Platform Max HARTs     : 8
+Current Hart           : 0
+Firmware Base          : 0x80000000
+Firmware Size          : 112 KB
+Runtime SBI Version    : 0.1
+
+PMP0: 0x0000000080000000-0x000000008001ffff (A)
+PMP1: 0x0000000000000000-0xffffffffffffffff (A,R,W,X)
+(THU.CST) os is loading ...
+```
 程序会一直执行，一直循环下去无法向下执行。自此内核被加载并且一直处于运行状态。只有碰到中断或者其他触发，才能停止程序。
 
 ## 实验总结
