@@ -19,7 +19,7 @@ riscv64-unknown-elf-objcopy bin/kernel --strip-all -O binary bin/ucore.img
 
 ```
 1.新建一个终端，同样到lab0目录下，执行make gdb命令，进入gdb调试模式。
-2.首先执行的是`x/10i 0x80000000`指令，获取CPU加电以后的10条指令，输出如下：
+2.首先执行的是`x/10i $pc`指令，获取CPU加电以后的10条指令，输出如下：
 ```
 => 0x1000:	auipc	t0,0x0
    0x1004:	addi	a1,t0,32
