@@ -62,7 +62,6 @@ _clock_map_swappable(struct mm_struct *mm, uintptr_t addr, struct Page *page, in
     list_entry_t *head = mm->sm_priv;
     list_add(head, entry);
     page->visited = 1;
-    curr_ptr = entry;
 
     return 0;
 }
